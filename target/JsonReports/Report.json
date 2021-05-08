@@ -1,0 +1,87 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-01T08:12:46.325Z",
+        "line": 4,
+        "name": "Testing Login Functionality",
+        "description": "",
+        "id": "test-login;testing-login-functionality",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2000200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on login page",
+            "match": {
+              "location": "StepDefinitions.LoginSteps.user_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enters username and password",
+            "match": {
+              "location": "StepDefinitions.LoginSteps.EnterCredential()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "clicks on login button",
+            "match": {
+              "location": "StepDefinitions.LoginSteps.ClickLogin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 975400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user navigated to home page",
+            "match": {
+              "location": "StepDefinitions.LoginSteps.Home_Page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smokeRegression"
+          },
+          {
+            "name": "@smoketest"
+          }
+        ]
+      }
+    ],
+    "name": "Test Login",
+    "description": "",
+    "id": "test-login",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/login.feature",
+    "tags": [
+      {
+        "name": "@smokeRegression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
