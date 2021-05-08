@@ -8,16 +8,12 @@ pipeline {
 
         stage ('Build') {
             steps {
-                withMaven(maven: 'maven-3.8') {
                     sh 'mvn clean install'
-                    }   
                  }
            }
         stage ('Test Stage') {
             steps {
-                withMaven(maven: 'maven-3.8') {
                     sh 'mvn test'
-                } 
             } 
          }
         stage ('Cucumber Reports') {
