@@ -12,7 +12,8 @@ pipeline
                     sh 'mvn clean install'
                 }
                 
-            }
+              }
+           } 
             
          stage ('Test Stage') {
        
@@ -22,7 +23,8 @@ pipeline
                     sh 'mvn test'
                 }
                 
-            }   
+            } 
+         }
              stage ('Cucumber Reports') {
        
           steps {
@@ -33,3 +35,4 @@ pipeline
                 
             }   
      }
+   }
