@@ -1,25 +1,24 @@
 pipeline
     agent any
-    stages { 
-        stage ('Compile Stage') {
+    tools { 
+        maven 'Maven 3.8.1' 
+        jdk 'jdk8' 
+    }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
+        stage ('Build') {
             steps {
                 withMaven(maven: 'maven-3.8.1') {
                     sh 'mvn clean install'
                                                 }   
                   }
            }      
-        stage ('Test Stage') {
-           steps {
-               withMaven(maven: 'maven-3.8.1') {
-                    sh 'mvn test'
-                } 
-            } 
-         }
-        stage ('Cucumber Reports') {
-           steps {
-               cucumber buildStatus: "UNSTABLE",
-                    fileIncludePattern: "**/cucumber.json",
-                    jsonRepositoryDirectory: 'target'   
-                }   
-        }
+      
    }
