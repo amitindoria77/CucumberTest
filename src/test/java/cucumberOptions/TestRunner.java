@@ -20,7 +20,8 @@ import cucumber.api.junit.Cucumber;
 		        glue={"StepDefinitions","Hooks"},
 		        // we can also add "not Regression" tag it wont run regression also we can use or,and and all annotaions
 		        tags="@Regression",
-		        plugin={"pretty","json:/target/JsonReports/report.json"})
+		        plugin={"pretty","json:/target/JsonReports/report.json"},
+                        format={"json:target/cucumber.json"})
 
 public class TestRunner {
 
