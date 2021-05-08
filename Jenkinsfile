@@ -1,7 +1,7 @@
-pipeline {
+node ("windows"){
     agent any
     tools { 
-        maven 'maven-3.8' 
+        maven 'maven-3.8.1' 
         jdk 'jdk1.8' 
     }
     stages {
