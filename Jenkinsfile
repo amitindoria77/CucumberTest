@@ -28,6 +28,7 @@ pipeline {
                     archiveArtifacts 'target/*.jar'
                 }
             }
+        }
        stage ('Cucumber Reports') {
            steps {
                cucumber buildStatus: "UNSTABLE",
